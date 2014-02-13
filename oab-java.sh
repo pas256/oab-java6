@@ -695,9 +695,9 @@ if [ -n "${BUILD_KEY}" ] || [ -e ${WORK_PATH}/gpg/pubring.gpg ] && [ -e ${WORK_P
 
         # Add the public signing key
         ncecho " [x] Adding public key "
-        apt-key --keyring ${WORK_PATH}/deb/oab.gpg add ${WORK_PATH}/deb/pubkey.asc >> "$log" 2>&1 &
+        apt-key --keyring ${WORK_PATH}/deb/oab.gpg add ${WORK_PATH}/deb/pubkey.asc
         cp ${WORK_PATH}/deb/oab.gpg /etc/apt/trusted.gpg.d/
-        pid=$!;progress $pid
+        cecho success
     fi
 fi
 
